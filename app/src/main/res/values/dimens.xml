@@ -10,4 +10,7 @@
     <dimen name="card_elevation">8dp</dimen>
     <dimen name="card_margin">16dp</dimen>
     <dimen name="image_height">150dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="margin_def">5dp</dimen>
+    <item name="counter_max_length" format="integer" type="dimen">20</item>
 </resources>

@@ -10,4 +10,6 @@
     <string name="repeat_text">Повторить</string>
     <string name="title_text_example">Название</string>
     <string name="description_text_example">Описание к картинке</string>
+    <string name="search_text">Найти в Википедии</string>
+    <string name="helper_text">Тут Вы можете найти неизвестные слова</string>
 </resources>
