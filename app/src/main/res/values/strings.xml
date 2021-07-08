@@ -12,4 +12,10 @@
     <string name="description_text_example">Описание к картинке</string>
     <string name="search_text">Найти в Википедии</string>
     <string name="helper_text">Тут Вы можете найти неизвестные слова</string>
+    <string name="shared_preference_theme">theme_preference</string>
+    <string name="key_theme_id">theme_id</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="settings_theme_title">Тема</string>
+    <string name="gray_theme">Серая тема</string>
+    <string name="orange_theme">Оранжевая тема</string>
 </resources>

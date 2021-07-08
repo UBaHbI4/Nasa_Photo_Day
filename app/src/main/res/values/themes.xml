@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!--Серая тема-->
     <style name="Theme.NasaPhotoDay" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/grey_light</item>
@@ -12,6 +12,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!-- Градиент для фона меню заголовка в шторке. -->
+        <item name="header_background">@drawable/side_nav_bar</item>
+        <!-- Иконка заголовка в шторке. Для серой темы будет темно-серая -->
+        <item name="header_image">@drawable/ic_main_menu_home</item>
+        <!-- Стиль для карточки серой темы -->
+        <item name="card_style">@style/CardStyle</item>
+        <!-- Цвет текста тулбара -->
+        <item name="toolbar_title_color">@color/white</item>
     </style>
 
     <style name="Theme.NasaPhotoDay.NoActionBar">
@@ -22,4 +30,53 @@
     <style name="Theme.NasaPhotoDay.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.NasaPhotoDay.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Стиль карточки серой темы. Тут карточка будет со скруглениями-->
+    <style name="CardStyle">
+        <item name="android:layout_height">@dimen/card_height</item>
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+    </style>
+
+    <!--Оранжевая тема-->
+    <style name="Theme.NasaPhotoDay.Orange" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/orange_light</item>
+        <item name="colorPrimaryVariant">@color/orange</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange_light</item>
+        <item name="colorSecondaryVariant">@color/gray_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <!-- Градиент для фона меню заголовка в шторке. -->
+        <item name="header_background">@drawable/side_nav_bar_orange</item>
+        <!-- Иконка заголовка в шторке. Для оранжевой темы будет белая -->
+        <item name="header_image">@drawable/ic_main_menu_home_orange</item>
+        <!-- Стиль для карточки оранжевой темы -->
+        <item name="card_style">@style/CardStyle.Orange</item>
+        <!-- Цвет текста тулбара -->
+        <item name="toolbar_title_color">@color/gray_dark</item>
+    </style>
+
+    <style name="Theme.NasaPhotoDay.Orange.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.NasaPhotoDay.Orange.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.NasaPhotoDay.Orange.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--Стиль карточки оранжевой темы. Тут карточка будет без скругленных углов-->
+    <style name="CardStyle.Orange">
+        <item name="android:layout_height">@dimen/card_height</item>
+        <item name="android:layout_margin">@dimen/card_margin</item>
+        <item name="cardCornerRadius">@dimen/card_corner_radius_orange</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+    </style>
+
 </resources>

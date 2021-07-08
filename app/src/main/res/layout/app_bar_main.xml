@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.NasaPhotoDay.PopupOverlay" />
+            app:popupTheme="@style/Theme.NasaPhotoDay.PopupOverlay"
+            app:titleTextColor="?attr/toolbar_title_color" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

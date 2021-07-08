@@ -7,10 +7,11 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="card_height">190dp</dimen>
     <dimen name="card_corner_radius">7dp</dimen>
+    <dimen name="card_corner_radius_orange">0dp</dimen>
     <dimen name="card_elevation">8dp</dimen>
     <dimen name="card_margin">16dp</dimen>
     <dimen name="image_height">150dp</dimen>
     <dimen name="zero">0dp</dimen>
-    <dimen name="margin_def">5dp</dimen>
+    <dimen name="margin_def">16dp</dimen>
     <item name="counter_max_length" format="integer" type="dimen">20</item>
 </resources>

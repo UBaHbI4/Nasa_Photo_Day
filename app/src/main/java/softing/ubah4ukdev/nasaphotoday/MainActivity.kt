@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import softing.ubah4ukdev.nasaphotoday.databinding.ActivityMainBinding
+import softing.ubah4ukdev.nasaphotoday.domain.storage.AppThemeStorage
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        init()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -37,6 +40,19 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    /*
+    * Считываем тему из sharedPreferences и применяем ее
+    */
+    private fun init() {
+        val themeStorage = AppThemeStorage(this.application)
+        themeStorage.themeID?.let {
+            when (it) {
+                0 -> setTheme(R.style.Theme_NasaPhotoDay_NoActionBar)
+                1 -> setTheme(R.style.Theme_NasaPhotoDay_Orange_NoActionBar)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
