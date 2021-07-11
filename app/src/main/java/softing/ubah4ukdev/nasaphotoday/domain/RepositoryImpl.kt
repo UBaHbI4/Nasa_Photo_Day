@@ -6,7 +6,7 @@ import softing.ubah4ukdev.moviesinfosearcher.domain.Error
 import softing.ubah4ukdev.moviesinfosearcher.domain.RepositoryResult
 import softing.ubah4ukdev.moviesinfosearcher.domain.Success
 import softing.ubah4ukdev.nasaphotoday.domain.model.Photo
-import softing.ubah4ukdev.nasaphotoday.network.PhotoResponse
+import softing.ubah4ukdev.nasaphotoday.network.PhotoDayResponse
 import softing.ubah4ukdev.nasaphotoday.network.Retrofit
 
 /****
@@ -26,13 +26,13 @@ object RepositoryImpl : IRepository {
 
         retrofitInstance.getPhoto()
             .enqueue(
-                object : retrofit2.Callback<PhotoResponse> {
+                object : retrofit2.Callback<PhotoDayResponse> {
                     override fun onResponse(
-                        call: Call<PhotoResponse>,
-                        response: Response<PhotoResponse>
+                        call: Call<PhotoDayResponse>,
+                        dayResponse: Response<PhotoDayResponse>
                     ) {
-                        if (response.isSuccessful) {
-                            response.body()?.let {
+                        if (dayResponse.isSuccessful) {
+                            dayResponse.body()?.let {
                                 val photoDetail: Photo = it.let {
                                     val photoResult = Photo(
                                         date = it.date,
@@ -50,7 +50,7 @@ object RepositoryImpl : IRepository {
                         }
                     }
 
-                    override fun onFailure(call: Call<PhotoResponse>, t: Throwable) {
+                    override fun onFailure(call: Call<PhotoDayResponse>, t: Throwable) {
                         callback.invoke(Error(Exception(t.message)))
                     }
                 }
