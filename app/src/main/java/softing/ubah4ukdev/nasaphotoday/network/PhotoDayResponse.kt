@@ -11,7 +11,7 @@ Created by Ivan Sheynmaer
 2021.07.05
 v1.0
  */
-data class PhotoResponse (
+data class PhotoDayResponse (
     @SerializedName("date")
     val date: String?,
 

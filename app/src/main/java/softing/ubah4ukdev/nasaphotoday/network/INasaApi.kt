@@ -17,5 +17,5 @@ interface INasaApi {
 
     @GET("planetary/apod?api_key=${BuildConfig.API_KEY}")
     fun getPhoto(
-    ): Call<PhotoResponse>
+    ): Call<PhotoDayResponse>
 }
