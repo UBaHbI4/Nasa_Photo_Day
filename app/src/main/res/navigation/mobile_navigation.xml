@@ -3,13 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_picture_apod">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="softing.ubah4ukdev.nasaphotoday.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_picture_apod"
+        android:name="softing.ubah4ukdev.nasaphotoday.ui.pictureapod.ApodFragment"
+        android:label="@string/menu_apod"
+        tools:layout="@layout/fragment_apod" />
+
+    <fragment
+        android:id="@+id/nav_picture_earth"
+        android:name="softing.ubah4ukdev.nasaphotoday.ui.pictureepic.EpicFragment"
+        android:label="@string/menu_earth"
+        tools:layout="@layout/fragment_earth" />
+
+    <fragment
+        android:id="@+id/nav_picture_mars"
+        android:name="softing.ubah4ukdev.nasaphotoday.ui.picturemars.MarsFragment"
+        android:label="@string/menu_mars"
+        tools:layout="@layout/fragment_mars" />
 
     <fragment
         android:id="@+id/nav_settings"

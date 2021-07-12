@@ -1,7 +1,9 @@
 package softing.ubah4ukdev.nasaphotoday.domain
 
 import softing.ubah4ukdev.moviesinfosearcher.domain.RepositoryResult
-import softing.ubah4ukdev.nasaphotoday.domain.model.Photo
+import softing.ubah4ukdev.nasaphotoday.domain.model.Apod
+import softing.ubah4ukdev.nasaphotoday.domain.model.Epic
+import softing.ubah4ukdev.nasaphotoday.domain.model.Mars
 
 /****
 Project Nasa Photo Day
@@ -13,6 +15,15 @@ Created by Ivan Sheynmaer
 v1.0
  */
 interface IRepository {
+    //Получить астрономическое фото дня
+    fun getAstronomyPictureDay(callback: (result: RepositoryResult<Apod>) -> Unit)
 
-    fun photoDay(callback: (result: RepositoryResult<Photo>) -> Unit)
+    //Получить фото Земли
+    fun getEarthPictureDay(callback: (result: RepositoryResult<ArrayList<Epic>>) -> Unit)
+
+    //Получить фото Марса
+    fun getMarsPictureDay(
+        earthDate: String,
+        callback: (result: RepositoryResult<ArrayList<Mars>>) -> Unit
+    )
 }

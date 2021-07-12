@@ -6,7 +6,7 @@
     <string name="nav_header_subtitle">api.nasa.gov</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="menu_home">Фото дня</string>
+    <string name="menu_apod">Фото дня (Астр)</string>
     <string name="repeat_text">Повторить</string>
     <string name="title_text_example">Название</string>
     <string name="description_text_example">Описание к картинке</string>
@@ -18,4 +18,18 @@
     <string name="settings_theme_title">Тема</string>
     <string name="gray_theme">Серая тема</string>
     <string name="orange_theme">Оранжевая тема</string>
+    <string name="copyright_text_example">copyright</string>
+    <string name="copyright">Copyright:</string>
+    <string name="identifier_text_example">identifier</string>
+    <string name="caption_text_example">caption</string>
+    <string name="date_text_example">date</string>
+    <string name="date">Date:</string>
+    <string name="menu_earth">Фото дня (Земля)</string>
+    <string name="menu_mars">Фото дня (Марс)</string>
+    <string name="camera_name_text_example">Название камеры</string>
+    <string name="camera_full_name_text_example">Полное название камеры</string>
+    <string name="rover_name_text_example">Название марсохода</string>
+    <string name="rover_landing_date_text_example">rover_landing_data</string>
+    <string name="rover_launch_date_text_example">rover_launch_date</string>
+    <string name="status_text_example">status</string>
 </resources>

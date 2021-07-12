@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
+        tools:context=".ui.pictureapod.ApodFragment">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout"
@@ -39,6 +39,7 @@
             android:id="@+id/card"
             style="?attr/card_style"
             android:layout_width="match_parent"
+            android:outlineSpotShadowColor="?android:attr/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/input_layout">
@@ -88,6 +89,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card"
             tools:text="@string/description_text_example" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/copyright"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_def"
+            android:ellipsize="end"
+            android:gravity="center_vertical|center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/orange_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            tools:text="@string/copyright_text_example" />
 
         <ProgressBar
             android:id="@+id/progress"

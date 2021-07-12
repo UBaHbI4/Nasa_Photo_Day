@@ -6,8 +6,7 @@ import softing.ubah4ukdev.nasaphotoday.domain.storage.AppThemeStorage
 
 class SettingsViewModelFactory(
     private val themeStorage: AppThemeStorage
-) :
-    ViewModelProvider.Factory {
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
         SettingsViewModel(themeStorage) as T
 }
