@@ -1,4 +1,4 @@
-package softing.ubah4ukdev.nasaphotoday.network
+package softing.ubah4ukdev.nasaphotoday.network.responses
 
 import com.google.gson.annotations.SerializedName
 
@@ -11,7 +11,9 @@ Created by Ivan Sheynmaer
 2021.07.05
 v1.0
  */
-data class PhotoDayResponse (
+
+//Astronomy Picture of the Day
+data class ApodResponse(
     @SerializedName("date")
     val date: String?,
 
@@ -32,4 +34,7 @@ data class PhotoDayResponse (
 
     @SerializedName("url")
     val photoUrl: String?,
+
+    @SerializedName("copyright")
+    val copyright: String?,
 )

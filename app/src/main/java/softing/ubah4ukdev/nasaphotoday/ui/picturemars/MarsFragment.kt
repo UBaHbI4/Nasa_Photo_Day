@@ -1,31 +1,32 @@
-package softing.ubah4ukdev.nasaphotoday.ui.home
+package softing.ubah4ukdev.nasaphotoday.ui.picturemars
 
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import softing.ubah4ukdev.nasaphotoday.R
-import softing.ubah4ukdev.nasaphotoday.databinding.FragmentHomeBinding
+import softing.ubah4ukdev.nasaphotoday.databinding.FragmentMarsBinding
 import softing.ubah4ukdev.nasaphotoday.domain.RepositoryImpl
 import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class MarsFragment : Fragment(R.layout.fragment_mars) {
 
     companion object {
         const val MAX_LINES = 5
     }
 
-    private val viewBinding: FragmentHomeBinding by viewBinding(
-        FragmentHomeBinding::bind
+    private val adapter by lazy { MarsAdapter() }
+
+    private val viewBinding: FragmentMarsBinding by viewBinding(
+        FragmentMarsBinding::bind
     )
 
-    private val homeViewModel: HomeViewModel by viewModels {
-        HomeViewModelFactory(RepositoryImpl)
+    private val marsViewModel: MarsViewModel by viewModels {
+        MarsViewModelFactory(RepositoryImpl)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,7 +35,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun init() {
-        homeViewModel.errorLiveData.observe(viewLifecycleOwner) {
+        val marsRV: RecyclerView = viewBinding.marsList
+        marsRV.adapter = adapter
+
+        marsViewModel.errorLiveData.observe(viewLifecycleOwner) {
             val error = it ?: return@observe
             viewBinding.progress.visible { false }
 
@@ -44,7 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     error,
                     Snackbar.LENGTH_INDEFINITE
                 )
-                .setAction(getString(R.string.repeat_text)) { homeViewModel.getPhoto() }
+                .setAction(getString(R.string.repeat_text)) { marsViewModel.getPhoto() }
                 .also {
                     it.view.also {
                         (it.findViewById(com.google.android.material.R.id.snackbar_text) as TextView?)?.maxLines =
@@ -54,25 +58,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 .show()
         }
 
-        homeViewModel.loadingLiveData.observe(viewLifecycleOwner) {
+        marsViewModel.loadingLiveData.observe(viewLifecycleOwner) {
             viewBinding.progress.visible { it }
         }
 
-        homeViewModel.photoLiveData.observe(viewLifecycleOwner) {
-            it?.title?.let {
-                viewBinding.title.text = it
-            }
-
-            it?.photoUrl?.let { url ->
-                Glide.with(viewBinding.photo)
-                    .load(url)
-                    .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                    .error(R.drawable.ic_no_image)
-                    .into(viewBinding.photo)
-            }
-
-            it?.explanation?.let {
-                viewBinding.description.text = it
+        marsViewModel.marsLiveData.observe(viewLifecycleOwner) {
+            with(adapter) {
+                clear()
+                val marses = it ?: return@observe
+                addItems(marses)
             }
         }
     }
@@ -80,7 +74,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            homeViewModel.getPhoto()
+            marsViewModel.getPhoto()
         }
     }
 }
