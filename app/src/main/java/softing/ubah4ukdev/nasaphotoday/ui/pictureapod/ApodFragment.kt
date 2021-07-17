@@ -45,7 +45,6 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
         (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
             setExpanded(true, true)
         }
-
     }
 
     private fun init() {

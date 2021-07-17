@@ -27,6 +27,7 @@ v1.0
 object RepositoryImpl : IRepository {
 
     private val retrofitInstance = Retrofit.retrofitInstance()
+    const val EMPTY_RESULT_ERROR_TEXT = "За выбранную дату (%s) отсутсвуют данные."
 
     override fun getAstronomyPictureDay(callback: (result: RepositoryResult<Apod>) -> Unit) {
         retrofitInstance.getApod()
@@ -138,7 +139,21 @@ object RepositoryImpl : IRepository {
                                         )
                                     )
                                 }
-                                callback.invoke(Success(marsList))
+
+                                if (marsList.isEmpty()) {
+                                    callback.invoke(
+                                        Error(
+                                            Exception(
+                                                String.format(
+                                                    EMPTY_RESULT_ERROR_TEXT,
+                                                    earthDate
+                                                )
+                                            )
+                                        )
+                                    )
+                                } else {
+                                    callback.invoke(Success(marsList))
+                                }
                             }
                         }
                     }
