@@ -5,7 +5,9 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import kotlinx.coroutines.flow.collect
+import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentSettingsBinding
 import softing.ubah4ukdev.nasaphotoday.domain.storage.AppThemeStorage
@@ -28,8 +30,11 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListe
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         init()
+
+        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.let {
+            it.title = getString(R.string.settings_title)
+        }
     }
 
     private fun init() {
