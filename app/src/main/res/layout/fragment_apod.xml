@@ -38,10 +38,13 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             style="?attr/card_style"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/zero"
+            android:layout_height="@dimen/zero"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@dimen/apod_card_height_percent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/input_layout">
+            app:layout_constraintTop_toBottomOf="@id/input_layout"
+            app:layout_constraintWidth_percent="@dimen/apod_card_width_percent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -50,9 +53,10 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/image_height"
-                    android:scaleType="centerInside"
+                    android:layout_height="@dimen/zero"
+                    android:scaleType="center"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="@dimen/image_height_percent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:src="@tools:sample/avatars" />
@@ -60,13 +64,14 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/title"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/zero"
                     android:ellipsize="end"
                     android:gravity="center_vertical|center_horizontal"
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/blue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="@dimen/title_height_percent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/photo"
                     tools:text="@string/title_text_example" />

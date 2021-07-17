@@ -18,4 +18,12 @@
     <dimen name="image_height_earth">270dp</dimen>
     <item name="max_lines" format="integer" type="dimen">3</item>
     <item name="counter_max_length" format="integer" type="dimen">20</item>
+    <item name="earth_card_height_percent" format="float" type="dimen">0.8</item>
+    <item name="earth_card_width_percent" format="float" type="dimen">0.9</item>
+    <item name="mars_card_height_percent" format="float" type="dimen">0.65</item>
+    <item name="mars_card_width_percent" format="float" type="dimen">0.9</item>
+    <item name="image_height_percent" format="float" type="dimen">0.85</item>
+    <item name="title_height_percent" format="float" type="dimen">0.2</item>
+    <item name="apod_card_height_percent" format="float" type="dimen">0.38</item>
+    <item name="apod_card_width_percent" format="float" type="dimen">0.9</item>
 </resources>
