@@ -18,21 +18,21 @@
             android:fitsSystemWindows="true"
             app:collapsedTitleGravity="start|center_vertical"
             app:collapsedTitleTextAppearance="@style/CollapsedAppBar"
-            app:contentScrim="@color/white"
+            app:contentScrim="@color/grey_light"
             app:expandedTitleGravity="start|bottom"
             app:expandedTitleTextAppearance="@style/ExpandedAppBar"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:title="@string/apod_title"
             app:titleEnabled="true">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/toolbar_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_bar_image_height"
                 android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/img_collapsing_toolbar_bg"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_picture_day"
                 app:layout_collapseMode="pin" />
 
             <androidx.appcompat.widget.Toolbar

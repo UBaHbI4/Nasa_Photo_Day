@@ -17,7 +17,7 @@
     <dimen name="margin_text_def">5dp</dimen>
     <dimen name="card_height_earth">350dp</dimen>
     <dimen name="image_height_earth">270dp</dimen>
-    <dimen name="app_bar_image_height">200dp</dimen>
+    <dimen name="app_bar_image_height">180dp</dimen>
     <dimen name="img_margin_end">8dp</dimen>
     <dimen name="img_margin_bottom">13dp</dimen>
     <item name="max_lines" format="integer" type="dimen">3</item>

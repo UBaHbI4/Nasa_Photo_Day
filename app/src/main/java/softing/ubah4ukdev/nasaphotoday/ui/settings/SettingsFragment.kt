@@ -2,6 +2,7 @@ package softing.ubah4ukdev.nasaphotoday.ui.settings
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -34,6 +35,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListe
 
         (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.let {
             it.title = getString(R.string.settings_title)
+            val img: AppCompatImageView = it.findViewById(R.id.toolbar_image)
+            img.setImageResource(R.color.transparent)
         }
     }
 

@@ -3,6 +3,7 @@ package softing.ubah4ukdev.nasaphotoday.ui.pictureepic
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
@@ -37,6 +38,8 @@ class EpicFragment : Fragment(R.layout.fragment_earth) {
 
         (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.let {
             it.title = getString(R.string.epic_title)
+            val img: AppCompatImageView = it.findViewById(R.id.toolbar_image)
+            img.setImageResource(R.drawable.img_earth)
         }
     }
 
