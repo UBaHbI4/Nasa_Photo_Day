@@ -8,11 +8,13 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         style="?attr/card_style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="@dimen/mars_card_height_percent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="@dimen/mars_card_width_percent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -21,9 +23,10 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/photo_mars"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/image_height"
+                android:layout_height="@dimen/zero"
                 android:scaleType="center"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="@dimen/image_height_percent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@drawable/ic_no_image" />
@@ -31,14 +34,15 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/zero"
                 android:layout_margin="@dimen/card_margin"
                 android:ellipsize="end"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="?android:attr/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="@dimen/title_height_percent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/photo_mars"
                 tools:text="@string/date_text_example" />

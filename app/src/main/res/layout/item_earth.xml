@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="0dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/card_height_earth"
-        android:layout_margin="@dimen/card_margin"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
+        android:layout_marginTop="@dimen/card_margin"
         app:cardCornerRadius="@dimen/card_corner_radius"
         app:cardElevation="@dimen/card_elevation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="@dimen/earth_card_height_percent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="@dimen/earth_card_width_percent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,9 +26,10 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/photo_earth"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/image_height_earth"
+                android:layout_height="@dimen/zero"
                 android:scaleType="center"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="@dimen/image_height_percent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@drawable/ic_no_image" />
@@ -33,15 +37,16 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/caption"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/zero"
                 android:layout_margin="@dimen/margin_text_def"
                 android:ellipsize="end"
-                android:gravity="center_vertical|center_horizontal"
+                android:gravity="center"
                 android:maxLines="@dimen/max_lines"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="@color/blue"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="@dimen/title_height_percent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/photo_earth"
                 tools:text="@string/title_text_example" />

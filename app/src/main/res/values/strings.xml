@@ -32,4 +32,8 @@
     <string name="rover_landing_date_text_example">rover_landing_data</string>
     <string name="rover_launch_date_text_example">rover_launch_date</string>
     <string name="status_text_example">status</string>
+    <string name="epic_title">Фото дня (Земля)</string>
+    <string name="mars_title">Фото дня (Марс)</string>
+    <string name="apod_title">Фото дня (Астр)</string>
+    <string name="settings_title">Настройки</string>
 </resources>

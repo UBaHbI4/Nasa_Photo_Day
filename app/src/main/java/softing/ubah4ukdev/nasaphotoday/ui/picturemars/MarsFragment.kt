@@ -6,7 +6,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.snackbar.Snackbar
+import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentMarsBinding
 import softing.ubah4ukdev.nasaphotoday.domain.RepositoryImpl
@@ -32,6 +34,10 @@ class MarsFragment : Fragment(R.layout.fragment_mars) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+
+        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.let {
+            it.title = getString(R.string.mars_title)
+        }
     }
 
     private fun init() {

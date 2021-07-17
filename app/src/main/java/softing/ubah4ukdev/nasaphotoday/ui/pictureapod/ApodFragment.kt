@@ -7,14 +7,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.snackbar.Snackbar
+import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentApodBinding
 import softing.ubah4ukdev.nasaphotoday.domain.RepositoryImpl
 import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
-class ApodFragment : Fragment(R.layout.fragment_apod) {
+class ApodFragment : Fragment(R.layout.fragment_apod_start) {
 
     companion object {
         const val MAX_LINES = 5
@@ -31,12 +33,16 @@ class ApodFragment : Fragment(R.layout.fragment_apod) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+
+        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.let {
+            it.title = getString(R.string.apod_title)
+        }
     }
 
     private fun init() {
         apodViewModel.errorLiveData.observe(viewLifecycleOwner) {
             val error = it ?: return@observe
-            viewBinding.progress.visible { false }
+            viewBinding.progressLoading.visible { false }
 
             Snackbar
                 .make(
@@ -55,7 +61,7 @@ class ApodFragment : Fragment(R.layout.fragment_apod) {
         }
 
         apodViewModel.loadingLiveData.observe(viewLifecycleOwner) {
-            viewBinding.progress.visible { it }
+            viewBinding.progressLoading.visible { it }
         }
 
         apodViewModel.apodLiveData.observe(viewLifecycleOwner) {
