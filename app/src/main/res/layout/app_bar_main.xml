@@ -32,6 +32,7 @@
                 android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
+                android:alpha="@dimen/app_bar_image_alpha"
                 android:src="@drawable/img_picture_day"
                 app:layout_collapseMode="pin" />
 

@@ -30,4 +30,5 @@
     <item name="title_height_percent" format="float" type="dimen">0.2</item>
     <item name="apod_card_height_percent" format="float" type="dimen">0.38</item>
     <item name="apod_card_width_percent" format="float" type="dimen">0.9</item>
+    <item name="app_bar_image_alpha" format="float" type="dimen">0.3</item>
 </resources>

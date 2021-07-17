@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.snackbar.Snackbar
 import softing.ubah4ukdev.nasaphotoday.MainActivity
@@ -35,11 +36,16 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
         super.onViewCreated(view, savedInstanceState)
         init()
 
-        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.let {
-            it.title = getString(R.string.apod_title)
-            val img: AppCompatImageView = it.findViewById(R.id.toolbar_image)
+        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.apply {
+            title = getString(R.string.apod_title)
+            val img: AppCompatImageView = findViewById(R.id.toolbar_image)
             img.setImageResource(R.drawable.img_picture_day)
         }
+
+        (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
+            setExpanded(true, true)
+        }
+
     }
 
     private fun init() {
