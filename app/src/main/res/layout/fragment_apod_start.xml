@@ -42,8 +42,7 @@
                 app:endIconMode="custom"
                 app:helperText="@string/helper_text"
                 app:layout_constraintBottom_toTopOf="@+id/image_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toEndOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_edit_text"
@@ -125,7 +124,6 @@
                 app:layout_constraintTop_toBottomOf="@id/description"
                 tools:text="@string/copyright_text_example" />
 
-
         </androidx.constraintlayout.motion.widget.MotionLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -140,5 +138,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -16,7 +16,7 @@ import softing.ubah4ukdev.nasaphotoday.domain.RepositoryImpl
 import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
-class ApodFragment : Fragment(R.layout.fragment_apod) {
+class ApodFragment : Fragment(R.layout.fragment_apod_start) {
 
     companion object {
         const val MAX_LINES = 5
@@ -42,7 +42,7 @@ class ApodFragment : Fragment(R.layout.fragment_apod) {
     private fun init() {
         apodViewModel.errorLiveData.observe(viewLifecycleOwner) {
             val error = it ?: return@observe
-            viewBinding.progress.visible { false }
+            viewBinding.progressLoading.visible { false }
 
             Snackbar
                 .make(
@@ -61,7 +61,7 @@ class ApodFragment : Fragment(R.layout.fragment_apod) {
         }
 
         apodViewModel.loadingLiveData.observe(viewLifecycleOwner) {
-            viewBinding.progress.visible { it }
+            viewBinding.progressLoading.visible { it }
         }
 
         apodViewModel.apodLiveData.observe(viewLifecycleOwner) {
