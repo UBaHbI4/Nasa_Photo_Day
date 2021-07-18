@@ -22,7 +22,9 @@
     <dimen name="img_margin_bottom">13dp</dimen>
     <dimen name="start_title_margin_vertical">10dp</dimen>
     <dimen name="button_states_width">5dp</dimen>
-    <dimen name="motion_duration">900</dimen>
+    <item name="button_alpha_one" format="integer" type="dimen">1</item>
+    <item name="button_alpha_zero" format="integer" type="dimen">0</item>
+    <item name="motion_duration" format="integer" type="dimen">900</item>
     <item name="max_lines" format="integer" type="dimen">3</item>
     <item name="counter_max_length" format="integer" type="dimen">20</item>
     <item name="earth_card_height_percent" format="float" type="dimen">0.8</item>
