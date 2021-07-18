@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.start.StartFragment">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_picture_of_the_day"
+        style="?attr/image_button_style"
+        android:background="@drawable/button_states"
+        android:src="@drawable/ic_main_menu_apod"
+        android:tint="?android:attr/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/btn_earth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_earth"
+        style="?attr/image_button_style"
+        android:background="@drawable/button_states"
+        android:src="@drawable/ic_main_menu_earth"
+        android:tint="?android:attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_picture_of_the_day"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/apod_title"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/start_title_margin_vertical"
+        android:text="@string/apod"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="@id/btn_picture_of_the_day"
+        app:layout_constraintStart_toStartOf="@id/btn_picture_of_the_day"
+        app:layout_constraintTop_toBottomOf="@id/btn_picture_of_the_day"
+        app:layout_constraintWidth_percent="@dimen/start_title_width_percent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/earth_title"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/start_title_margin_vertical"
+        android:text="@string/epic"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="@id/btn_earth"
+        app:layout_constraintStart_toStartOf="@id/btn_earth"
+        app:layout_constraintTop_toBottomOf="@id/btn_earth"
+        app:layout_constraintWidth_percent="@dimen/start_title_width_percent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_mars"
+        style="?attr/image_button_style"
+        android:background="@drawable/button_states"
+        android:src="@drawable/ic_main_menu_mars"
+        android:tint="?android:attr/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/btn_settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/apod_title" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_settings"
+        style="?attr/image_button_style"
+        android:background="@drawable/button_states"
+        android:src="@drawable/ic_main_menu_settings"
+        android:tint="?android:attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_mars"
+        app:layout_constraintTop_toBottomOf="@id/apod_title" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/apod_mars"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/start_title_margin_vertical"
+        android:text="@string/mars"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="@id/btn_mars"
+        app:layout_constraintStart_toStartOf="@id/btn_mars"
+        app:layout_constraintTop_toBottomOf="@id/btn_mars"
+        app:layout_constraintWidth_percent="@dimen/start_title_width_percent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_title"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/start_title_margin_vertical"
+        android:text="@string/settings"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintEnd_toEndOf="@id/btn_settings"
+        app:layout_constraintStart_toStartOf="@id/btn_settings"
+        app:layout_constraintTop_toBottomOf="@id/btn_settings"
+        app:layout_constraintWidth_percent="@dimen/start_title_width_percent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

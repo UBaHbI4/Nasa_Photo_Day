@@ -2,9 +2,11 @@ package softing.ubah4ukdev.nasaphotoday.ui.settings
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import kotlinx.coroutines.flow.collect
 import softing.ubah4ukdev.nasaphotoday.MainActivity
@@ -32,8 +34,15 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListe
         super.onViewCreated(view, savedInstanceState)
         init()
 
-        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.let {
-            it.title = getString(R.string.settings_title)
+        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)
+            ?.apply {
+                title = getString(R.string.settings_title)
+                val img: AppCompatImageView = findViewById(R.id.toolbar_image)
+                img.setImageResource(R.color.transparent)
+            }
+
+        (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
+            setExpanded(false, true)
         }
     }
 
@@ -78,5 +87,4 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListe
             }
         }
     }
-
 }

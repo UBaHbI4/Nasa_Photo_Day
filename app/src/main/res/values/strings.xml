@@ -36,4 +36,10 @@
     <string name="mars_title">Фото дня (Марс)</string>
     <string name="apod_title">Фото дня (Астр)</string>
     <string name="settings_title">Настройки</string>
+    <string name="menu_start">Главная</string>
+    <string name="start_title">NASA Picture of the Day</string>
+    <string name="apod">Фото дня</string>
+    <string name="epic">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="settings">Настройки</string>
 </resources>

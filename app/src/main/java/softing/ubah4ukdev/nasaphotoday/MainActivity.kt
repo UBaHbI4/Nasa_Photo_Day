@@ -35,9 +35,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_picture_apod,
-                R.id.nav_picture_earth,
-                R.id.nav_picture_mars
+                R.id.nav_start
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     */
     private fun init() {
         val themeStorage = AppThemeStorage(this.application)
-        themeStorage.themeID?.let {
+        themeStorage.themeID.let {
             when (it) {
                 0 -> setTheme(R.style.Theme_NasaPhotoDay_NoActionBar)
                 1 -> setTheme(R.style.Theme_NasaPhotoDay_Orange_NoActionBar)

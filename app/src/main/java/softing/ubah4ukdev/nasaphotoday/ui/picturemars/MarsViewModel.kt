@@ -25,7 +25,7 @@ class MarsViewModel(private val repository: IRepository) : ViewModel() {
         var currentDate = Date()
         val calendar = Calendar.getInstance()
         calendar.time = currentDate
-        calendar.add(Calendar.DATE, -1)
+        calendar.add(Calendar.DATE, -2)
         currentDate = calendar.time
         val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         return dateFormat.format(currentDate)
