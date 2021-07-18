@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="header_background" format="reference"></attr>
-    <attr name="header_image" format="reference"></attr>
-    <attr name="card_style" format="string"></attr>
-    <attr name="toolbar_title_color" format="color"></attr>
+    <attr name="header_background" format="reference" />
+    <attr name="header_image" format="reference" />
+    <attr name="card_style" format="string" />
+    <attr name="toolbar_title_color" format="color" />
+    <attr name="image_button_style" format="string" />
 </resources>

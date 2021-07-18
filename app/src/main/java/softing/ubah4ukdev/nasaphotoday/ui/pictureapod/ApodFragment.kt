@@ -36,11 +36,12 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
         super.onViewCreated(view, savedInstanceState)
         init()
 
-        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.apply {
-            title = getString(R.string.apod_title)
-            val img: AppCompatImageView = findViewById(R.id.toolbar_image)
-            img.setImageResource(R.drawable.img_picture_day)
-        }
+        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)
+            ?.apply {
+                title = getString(R.string.apod_title)
+                val img: AppCompatImageView = findViewById(R.id.toolbar_image)
+                img.setImageResource(R.drawable.img_picture_day)
+            }
 
         (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
             setExpanded(true, true)

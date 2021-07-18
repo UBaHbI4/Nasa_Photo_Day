@@ -22,7 +22,7 @@
             app:expandedTitleGravity="start|bottom"
             app:expandedTitleTextAppearance="@style/ExpandedAppBar"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="@string/apod_title"
+            app:title="@string/start_title"
             app:titleEnabled="true">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -33,7 +33,7 @@
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
                 android:alpha="@dimen/app_bar_image_alpha"
-                android:src="@drawable/img_picture_day"
+                android:src="@drawable/img_start"
                 app:layout_collapseMode="pin" />
 
             <androidx.appcompat.widget.Toolbar

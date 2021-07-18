@@ -21,6 +21,8 @@
         <!-- Цвет текста тулбара -->
         <item name="toolbar_title_color">@color/white</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="image_button_style">@style/ImageButtonStyle</item>
+
     </style>
 
     <style name="Theme.NasaPhotoDay.NoActionBar">
@@ -38,6 +40,15 @@
         <item name="android:layout_margin">@dimen/card_margin</item>
         <item name="cardCornerRadius">@dimen/card_corner_radius</item>
         <item name="cardElevation">@dimen/card_elevation</item>
+    </style>
+
+    <!--Стиль AppCompatImageButton серой темы.-->
+    <style name="ImageButtonStyle">
+        <item name="android:layout_width">@dimen/image_button_size</item>
+        <item name="android:layout_height">@dimen/image_button_size</item>
+        <item name="android:layout_marginTop">@dimen/image_button_margin_top</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">@dimen/image_button_padding</item>
     </style>
 
     <!--Оранжевая тема-->
@@ -62,6 +73,7 @@
         <!-- Цвет текста тулбара -->
         <item name="toolbar_title_color">@color/gray_dark</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="image_button_style">@style/ImageButtonStyle.Orange</item>
     </style>
 
     <style name="Theme.NasaPhotoDay.Orange.NoActionBar">
@@ -81,6 +93,15 @@
         <item name="cardElevation">@dimen/card_elevation</item>
     </style>
 
+    <!--Стиль AppCompatImageButton серой темы.-->
+    <style name="ImageButtonStyle.Orange">
+        <item name="android:layout_width">@dimen/image_button_size</item>
+        <item name="android:layout_height">@dimen/image_button_size</item>
+        <item name="android:layout_marginTop">@dimen/image_button_margin_top</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">@dimen/image_button_padding</item>
+    </style>
+
     <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/white</item>
@@ -98,4 +119,7 @@
         <item name="color">@color/white</item>
     </style>
 
+    <dimen name="image_button_size">120dp</dimen>
+    <dimen name="image_button_margin_top">20dp</dimen>
+    <dimen name="image_button_padding">20dp</dimen>
 </resources>
