@@ -29,10 +29,10 @@
                 android:id="@+id/toolbar_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_bar_image_height"
+                android:alpha="@dimen/app_bar_image_alpha"
                 android:contentDescription="@string/app_name"
                 android:fitsSystemWindows="true"
                 android:scaleType="fitXY"
-                android:alpha="@dimen/app_bar_image_alpha"
                 android:src="@drawable/img_start"
                 app:layout_collapseMode="pin" />
 

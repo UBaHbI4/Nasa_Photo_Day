@@ -2,10 +2,16 @@ package softing.ubah4ukdev.nasaphotoday.ui.pictureapod
 
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.appbar.AppBarLayout
@@ -23,6 +29,8 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
     companion object {
         const val MAX_LINES = 5
     }
+
+    var isZoomed = false
 
     private val viewBinding: FragmentApodBinding by viewBinding(
         FragmentApodBinding::bind
@@ -92,6 +100,26 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
 
             it?.copyright?.let {
                 "${getString(R.string.copyright)} $it".also { viewBinding.copyright.text = it }
+            }
+        }
+
+        //Анимация увеличения картинки при нажатии на нее
+        viewBinding.photo.setOnClickListener {
+            isZoomed = !isZoomed
+            TransitionManager.beginDelayedTransition(
+                viewBinding.root,
+                TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+
+            val params: ViewGroup.LayoutParams = viewBinding.photo.layoutParams
+            params.height =
+                if (isZoomed) ViewGroup.LayoutParams.MATCH_PARENT else ViewGroup.LayoutParams.WRAP_CONTENT
+            viewBinding.photo.apply {
+                layoutParams = params
+                scaleType =
+                    if (isZoomed) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_CENTER
             }
         }
     }

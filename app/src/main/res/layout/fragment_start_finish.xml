@@ -11,21 +11,23 @@
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_picture_of_the_day"
         style="?attr/image_button_style"
-        android:alpha="@dimen/button_alpha_zero"
+        android:alpha="@dimen/button_alpha_one"
         android:background="@drawable/button_states"
         android:src="@drawable/ic_main_menu_apod"
         android:tint="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_earth"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_earth"
         style="?attr/image_button_style"
-        android:alpha="@dimen/button_alpha_zero"
+        android:alpha="@dimen/button_alpha_one"
         android:background="@drawable/button_states"
         android:src="@drawable/ic_main_menu_earth"
         android:tint="?android:attr/colorPrimary"
-        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_picture_of_the_day"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -57,21 +59,23 @@
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_mars"
         style="?attr/image_button_style"
-        android:alpha="@dimen/button_alpha_zero"
+        android:alpha="@dimen/button_alpha_one"
         android:background="@drawable/button_states"
         android:src="@drawable/ic_main_menu_mars"
         android:tint="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_settings"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/apod_title" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_settings"
         style="?attr/image_button_style"
-        android:alpha="@dimen/button_alpha_zero"
+        android:alpha="@dimen/button_alpha_one"
         android:background="@drawable/button_states"
         android:src="@drawable/ic_main_menu_settings"
         android:tint="?android:attr/colorPrimary"
-        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_mars"
         app:layout_constraintTop_toBottomOf="@id/apod_title" />
 
     <com.google.android.material.textview.MaterialTextView
