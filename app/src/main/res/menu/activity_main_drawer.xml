@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/main_group"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_start"
             android:icon="@drawable/ic_main_menu_start"
@@ -20,6 +22,15 @@
             android:id="@+id/nav_picture_mars"
             android:icon="@drawable/ic_main_menu_mars"
             android:title="@string/menu_mars" />
+    </group>
+
+    <group
+        android:id="@+id/secondary_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notes"
+            android:icon="@drawable/ic_main_menu_notes"
+            android:title="@string/menu_notes" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_main_menu_settings"

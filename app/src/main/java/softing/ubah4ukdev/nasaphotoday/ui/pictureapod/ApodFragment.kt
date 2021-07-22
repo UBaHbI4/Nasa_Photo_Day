@@ -16,11 +16,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentApodBinding
-import softing.ubah4ukdev.nasaphotoday.domain.RepositoryImpl
+import softing.ubah4ukdev.nasaphotoday.domain.repository.nasa.NasaRepositoryImpl
 import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
@@ -37,7 +38,7 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
     )
 
     private val apodViewModel: ApodViewModel by viewModels {
-        ApodViewModelFactory(RepositoryImpl)
+        ApodViewModelFactory(NasaRepositoryImpl)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,6 +55,11 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
         (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
             setExpanded(true, true)
         }
+
+        (activity as MainActivity).findViewById<FloatingActionButton>(R.id.fab)
+            ?.apply {
+                visible { false }
+            }
     }
 
     private fun init() {

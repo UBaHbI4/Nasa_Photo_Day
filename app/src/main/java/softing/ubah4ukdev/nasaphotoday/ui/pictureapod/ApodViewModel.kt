@@ -3,12 +3,12 @@ package softing.ubah4ukdev.nasaphotoday.ui.pictureapod
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import softing.ubah4ukdev.moviesinfosearcher.domain.Error
-import softing.ubah4ukdev.moviesinfosearcher.domain.Success
-import softing.ubah4ukdev.nasaphotoday.domain.IRepository
-import softing.ubah4ukdev.nasaphotoday.domain.model.Apod
+import softing.ubah4ukdev.nasaphotoday.domain.repository.nasa.Error
+import softing.ubah4ukdev.nasaphotoday.domain.repository.nasa.Success
+import softing.ubah4ukdev.nasaphotoday.domain.repository.nasa.INasaRepository
+import softing.ubah4ukdev.nasaphotoday.domain.model.nasa.Apod
 
-class ApodViewModel(private val repository: IRepository) : ViewModel() {
+class ApodViewModel(private val nasaRepository: INasaRepository) : ViewModel() {
 
     private val _loadingLiveData = MutableLiveData(false)
     private val _errorLiveData = MutableLiveData<String?>()
@@ -20,7 +20,7 @@ class ApodViewModel(private val repository: IRepository) : ViewModel() {
 
     fun getPhoto() {
         _loadingLiveData.value = true
-        repository.getAstronomyPictureDay() {
+        nasaRepository.getAstronomyPictureDay() {
             when (it) {
                 is Success -> {
                     _apodLiveData.value = it.value ?: null

@@ -1,12 +1,13 @@
-package softing.ubah4ukdev.nasaphotoday.ui.picturemars
+package softing.ubah4ukdev.nasaphotoday.ui.notes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import softing.ubah4ukdev.nasaphotoday.domain.repository.nasa.INasaRepository
+import softing.ubah4ukdev.nasaphotoday.domain.repository.notes.INotesRepository
 
-class MarsViewModelFactory(
-    private val nasaRepository: INasaRepository,
+class NotesViewModelFactory(
+    private val notesRepository: INotesRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
-        MarsViewModel(nasaRepository) as T
+        NotesViewModel(notesRepository) as T
 }

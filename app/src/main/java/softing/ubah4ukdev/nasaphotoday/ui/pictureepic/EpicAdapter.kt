@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import softing.ubah4ukdev.nasaphotoday.R
-import softing.ubah4ukdev.nasaphotoday.domain.model.Epic
+import softing.ubah4ukdev.nasaphotoday.domain.model.nasa.Epic
 
 /****
 Project Nasa Photo Day

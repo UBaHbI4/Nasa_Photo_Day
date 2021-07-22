@@ -1,4 +1,4 @@
-package softing.ubah4ukdev.nasaphotoday.domain.model
+package softing.ubah4ukdev.nasaphotoday.domain.model.nasa
 
 /****
 Project Nasa Photo Day

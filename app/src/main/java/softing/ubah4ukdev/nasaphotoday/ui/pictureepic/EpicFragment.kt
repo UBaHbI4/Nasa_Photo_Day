@@ -13,7 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentEarthBinding
-import softing.ubah4ukdev.nasaphotoday.domain.RepositoryImpl
+import softing.ubah4ukdev.nasaphotoday.domain.repository.nasa.NasaRepositoryImpl
 import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
@@ -30,7 +30,7 @@ class EpicFragment : Fragment(R.layout.fragment_earth) {
     )
 
     private val epicViewModel: EpicViewModel by viewModels {
-        EpicViewModelFactory(RepositoryImpl)
+        EpicViewModelFactory(NasaRepositoryImpl)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

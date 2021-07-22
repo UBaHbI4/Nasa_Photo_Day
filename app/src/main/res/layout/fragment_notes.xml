@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.pictureepic.EpicFragment"
-    android:animateLayoutChanges="true">
+    android:animateLayoutChanges="true"
+    tools:context=".ui.notes.NotesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/earthList"
+        android:id="@+id/notes_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_earth" />
+        tools:listitem="@layout/item_note" />
 
     <ProgressBar
         android:id="@+id/progress"

@@ -13,7 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentMarsBinding
-import softing.ubah4ukdev.nasaphotoday.domain.RepositoryImpl
+import softing.ubah4ukdev.nasaphotoday.domain.repository.nasa.NasaRepositoryImpl
 import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
@@ -30,18 +30,19 @@ class MarsFragment : Fragment(R.layout.fragment_mars) {
     )
 
     private val marsViewModel: MarsViewModel by viewModels {
-        MarsViewModelFactory(RepositoryImpl)
+        MarsViewModelFactory(NasaRepositoryImpl)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
 
-        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)?.apply {
-            title = getString(R.string.mars_title)
-            val img: AppCompatImageView = findViewById(R.id.toolbar_image)
-            img.setImageResource(R.drawable.img_mars)
-        }
+        (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)
+            ?.apply {
+                title = getString(R.string.mars_title)
+                val img: AppCompatImageView = findViewById(R.id.toolbar_image)
+                img.setImageResource(R.drawable.img_mars)
+            }
 
         (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
             setExpanded(true, true)

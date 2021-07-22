@@ -42,4 +42,8 @@
     <string name="epic">Земля</string>
     <string name="mars">Марс</string>
     <string name="settings">Настройки</string>
+    <string name="menu_notes">Заметки</string>
+    <string name="notes_title">Заметки</string>
+    <string name="note_text_example">Текст заметки</string>
+    <string name="fab_description" />
 </resources>

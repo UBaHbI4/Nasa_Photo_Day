@@ -13,9 +13,11 @@ import androidx.navigation.Navigation
 import androidx.transition.*
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentStartContainerBinding
+import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
 class StartFragment : Fragment(R.layout.fragment_start_container), View.OnClickListener {
@@ -59,6 +61,11 @@ class StartFragment : Fragment(R.layout.fragment_start_container), View.OnClickL
         (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
             setExpanded(true, true)
         }
+
+        (activity as MainActivity).findViewById<FloatingActionButton>(R.id.fab)
+            ?.apply {
+                visible { false }
+            }
 
         initScene()
 

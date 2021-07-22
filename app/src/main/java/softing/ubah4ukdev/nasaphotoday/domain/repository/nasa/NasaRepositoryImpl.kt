@@ -1,14 +1,11 @@
-package softing.ubah4ukdev.nasaphotoday.domain
+package softing.ubah4ukdev.nasaphotoday.domain.repository.nasa
 
 import retrofit2.Call
 import retrofit2.Response
-import softing.ubah4ukdev.moviesinfosearcher.domain.Error
-import softing.ubah4ukdev.moviesinfosearcher.domain.RepositoryResult
-import softing.ubah4ukdev.moviesinfosearcher.domain.Success
 import softing.ubah4ukdev.nasaphotoday.BuildConfig
-import softing.ubah4ukdev.nasaphotoday.domain.model.Apod
-import softing.ubah4ukdev.nasaphotoday.domain.model.Epic
-import softing.ubah4ukdev.nasaphotoday.domain.model.Mars
+import softing.ubah4ukdev.nasaphotoday.domain.model.nasa.Apod
+import softing.ubah4ukdev.nasaphotoday.domain.model.nasa.Epic
+import softing.ubah4ukdev.nasaphotoday.domain.model.nasa.Mars
 import softing.ubah4ukdev.nasaphotoday.network.Retrofit
 import softing.ubah4ukdev.nasaphotoday.network.responses.ApodResponse
 import softing.ubah4ukdev.nasaphotoday.network.responses.EpicResponse
@@ -24,7 +21,7 @@ Created by Ivan Sheynmaer
 2021.07.05
 v1.0
  */
-object RepositoryImpl : IRepository {
+object NasaRepositoryImpl : INasaRepository {
 
     private val retrofitInstance = Retrofit.retrofitInstance()
     const val EMPTY_RESULT_ERROR_TEXT = "За выбранную дату (%s) отсутсвуют данные."
@@ -76,7 +73,7 @@ object RepositoryImpl : IRepository {
                             dayResponse.body()?.let {
                                 val epicList: ArrayList<Epic> = arrayListOf()
                                 it.forEach { response ->
-                                    var dateRequest: String = ""
+                                    var dateRequest = ""
                                     response.date?.let {
                                         dateRequest =
                                             response.date.substring(0, 10).replace("-", "/")

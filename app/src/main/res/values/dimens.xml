@@ -37,4 +37,15 @@
     <item name="apod_card_width_percent" format="float" type="dimen">0.9</item>
     <item name="app_bar_image_alpha" format="float" type="dimen">0.3</item>
     <item name="start_title_width_percent" format="float" type="dimen">0.4</item>
+    <dimen name="note_margin_main_card">5dp</dimen>
+    <dimen name="notes_text_title_size_main_card">16sp</dimen>
+    <dimen name="notes_rect_size_main_card">20dp</dimen>
+    <item name="notes_count_lines" format="integer" type="dimen">2</item>
+    <dimen name="notes_text_default_size_main_card">14sp</dimen>
+    <dimen name="notes_date_margin_left">5dp</dimen>
+    <dimen name="notes_date_margin_bottom">5dp</dimen>
+    <dimen name="notes_text_date_size_main_card">12sp</dimen>
+    <dimen name="note_card_height">120dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="note_button_size">50dp</dimen>
 </resources>
