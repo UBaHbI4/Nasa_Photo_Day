@@ -1,4 +1,4 @@
-package softing.ubah4ukdev.moviesinfosearcher.domain
+package softing.ubah4ukdev.nasaphotoday.domain.repository.nasa
 
 sealed class RepositoryResult<T>
 data class Success<T>(val value: T) : RepositoryResult<T>()

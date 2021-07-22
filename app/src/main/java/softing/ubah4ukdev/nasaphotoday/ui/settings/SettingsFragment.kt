@@ -8,11 +8,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.flow.collect
 import softing.ubah4ukdev.nasaphotoday.MainActivity
 import softing.ubah4ukdev.nasaphotoday.R
 import softing.ubah4ukdev.nasaphotoday.databinding.FragmentSettingsBinding
 import softing.ubah4ukdev.nasaphotoday.domain.storage.AppThemeStorage
+import softing.ubah4ukdev.nasaphotoday.ui.extensions.visible
 import softing.ubah4ukdev.nasaphotoday.viewBinding
 
 class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListener {
@@ -39,6 +41,11 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), View.OnClickListe
                 title = getString(R.string.settings_title)
                 val img: AppCompatImageView = findViewById(R.id.toolbar_image)
                 img.setImageResource(R.color.transparent)
+            }
+
+        (activity as MainActivity).findViewById<FloatingActionButton>(R.id.fab)
+            ?.apply {
+                visible { false }
             }
 
         (activity as MainActivity).findViewById<AppBarLayout>(R.id.app_layout_bar)?.apply {
