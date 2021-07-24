@@ -40,10 +40,11 @@
                 android:layout_height="@dimen/zero"
                 android:layout_margin="@dimen/margin_text_def"
                 android:ellipsize="end"
+                android:fontFamily="@font/caveat_bold"
                 android:gravity="center"
                 android:maxLines="@dimen/max_lines"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="?android:attr/colorPrimary"
+                android:textSize="@dimen/earth_title_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="@dimen/title_height_percent"
@@ -53,29 +54,27 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/identifier"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/text_bk_color"
                 android:ellipsize="end"
+                android:fontFamily="@font/caveat_bold"
                 android:gravity="top|center_horizontal"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/identifier_text_example" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/date"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/text_bk_color"
                 android:ellipsize="end"
+                android:fontFamily="@font/caveat_bold"
                 android:gravity="bottom|center_horizontal"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toTopOf="@id/caption"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="@string/date_text_example" />
 
