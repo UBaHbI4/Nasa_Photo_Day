@@ -1,8 +1,15 @@
 package softing.ubah4ukdev.nasaphotoday.ui.start
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
 import android.view.View
 import android.view.ViewAnimationUtils
 import androidx.appcompat.widget.AppCompatImageButton
@@ -53,7 +60,93 @@ class StartFragment : Fragment(R.layout.fragment_start_container), View.OnClickL
 
         (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)
             ?.apply {
-                title = getString(R.string.start_title)
+                val spannable = SpannableString(getString(R.string.start_title))
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.RED),
+                    0,
+                    4,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(RelativeSizeSpan(1.5f), 0, 4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannable.setSpan(
+                    StyleSpan(Typeface.BOLD),
+                    0,
+                    4,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.BLUE),
+                    5,
+                    12,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(RelativeSizeSpan(1.3f), 5, 12, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannable.setSpan(
+                    StyleSpan(Typeface.BOLD_ITALIC),
+                    5,
+                    12,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.GREEN),
+                    19,
+                    23,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    RelativeSizeSpan(1.8f),
+                    19,
+                    23,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    StyleSpan(Typeface.BOLD_ITALIC),
+                    19,
+                    23,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.YELLOW),
+                    13,
+                    15,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    RelativeSizeSpan(1.8f),
+                    13,
+                    15,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    StyleSpan(Typeface.NORMAL),
+                    13,
+                    15,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.MAGENTA),
+                    16,
+                    19,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    RelativeSizeSpan(1.8f),
+                    16,
+                    19,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    StyleSpan(Typeface.NORMAL),
+                    16,
+                    19,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+
+                title = spannable
                 val img: AppCompatImageView = findViewById(R.id.toolbar_image)
                 img.setImageResource(R.drawable.img_start)
             }

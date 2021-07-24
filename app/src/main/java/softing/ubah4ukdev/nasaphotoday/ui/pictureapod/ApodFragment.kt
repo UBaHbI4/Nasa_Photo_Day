@@ -1,6 +1,14 @@
 package softing.ubah4ukdev.nasaphotoday.ui.pictureapod
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -47,7 +55,33 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
 
         (activity as MainActivity).findViewById<CollapsingToolbarLayout>(R.id.toolbarLayout)
             ?.apply {
-                title = getString(R.string.apod_title)
+                val spannable = SpannableString(getString(R.string.apod_title))
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.RED),
+                    0,
+                    4,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    StyleSpan(Typeface.BOLD),
+                    0,
+                    4,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.GREEN),
+                    5,
+                    8,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(
+                    StyleSpan(Typeface.BOLD),
+                    5,
+                    8,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                spannable.setSpan(RelativeSizeSpan(1.5f), 5, 8, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                title = spannable
                 val img: AppCompatImageView = findViewById(R.id.toolbar_image)
                 img.setImageResource(R.drawable.img_picture_day)
             }
@@ -101,7 +135,38 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
             }
 
             it?.explanation?.let {
-                viewBinding.description.text = it
+                val spannable = SpannableStringBuilder("          $it")
+                spannable.forEachIndexed { index, c ->
+                    if (c.isDigit()) {
+                        spannable.setSpan(
+                            ForegroundColorSpan(Color.RED),
+                            index,
+                            index + 1,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                    }
+                    if (c.isUpperCase()) {
+                        spannable.setSpan(
+                            ForegroundColorSpan(Color.MAGENTA),
+                            index,
+                            index + 1,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                        spannable.setSpan(
+                            RelativeSizeSpan(1.2f),
+                            index,
+                            index + 1,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                        spannable.setSpan(
+                            StyleSpan(Typeface.BOLD),
+                            index,
+                            index + 1,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                    }
+                }
+                viewBinding.description.text = spannable
             }
 
             it?.copyright?.let {
