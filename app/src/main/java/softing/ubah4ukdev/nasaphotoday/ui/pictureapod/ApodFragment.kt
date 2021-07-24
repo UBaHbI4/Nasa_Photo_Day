@@ -125,7 +125,7 @@ class ApodFragment : Fragment(R.layout.fragment_apod_start) {
             viewBinding.photo.apply {
                 layoutParams = params
                 scaleType =
-                    if (isZoomed) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_CENTER
+                    if (isZoomed) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_XY
             }
         }
     }
