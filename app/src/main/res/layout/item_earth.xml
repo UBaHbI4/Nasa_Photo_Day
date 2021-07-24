@@ -3,19 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="@dimen/item_earth_parent_height"
     android:animateLayoutChanges="true"
     android:padding="@dimen/zero">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="@dimen/zero"
-        android:layout_height="@dimen/zero"
+        android:layout_height="@dimen/item_earth_card_height"
         android:layout_marginTop="@dimen/card_margin"
         app:cardCornerRadius="@dimen/card_corner_radius"
         app:cardElevation="@dimen/card_elevation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="@dimen/earth_card_height_percent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="@dimen/earth_card_width_percent">
@@ -44,7 +43,7 @@
                 android:gravity="center"
                 android:maxLines="@dimen/max_lines"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textColor="@color/blue"
+                android:textColor="?android:attr/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="@dimen/title_height_percent"
@@ -52,36 +51,36 @@
                 app:layout_constraintTop_toBottomOf="@id/photo_earth"
                 tools:text="@string/title_text_example" />
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/identifier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/text_bk_color"
+                android:ellipsize="end"
+                android:gravity="top|center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/identifier_text_example" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/text_bk_color"
+                android:ellipsize="end"
+                android:gravity="bottom|center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/date_text_example" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/identifier"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/card_margin"
-        android:ellipsize="end"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card"
-        tools:text="@string/identifier_text_example" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_def"
-        android:ellipsize="end"
-        android:gravity="bottom|center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="@color/orange_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/identifier"
-        tools:text="@string/date_text_example" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

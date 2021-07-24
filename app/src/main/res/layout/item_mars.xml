@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="@dimen/item_mars_parent_height"
     android:animateLayoutChanges="true">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         style="?attr/card_style"
         android:layout_width="@dimen/zero"
-        android:layout_height="@dimen/zero"
+        android:layout_height="@dimen/card_height_mars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="@dimen/mars_card_height_percent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,104 +36,111 @@
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/zero"
-                android:layout_margin="@dimen/card_margin"
+                android:layout_margin="@dimen/margin_text_def"
+                android:background="@color/text_bk_color"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/date_text_example" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/camera_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_text_def"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                 android:textColor="?android:attr/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintBottom_toTopOf="@id/camera_full_name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="@dimen/title_height_percent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/photo_mars"
-                tools:text="@string/date_text_example" />
+                tools:text="@string/camera_name_text_example" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/camera_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_text_def"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="?android:attr/colorPrimary"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/camera_name"
+                tools:text="@string/camera_full_name_text_example" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/rover_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_text_def"
+                android:background="@color/text_bk_color"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date"
+                tools:text="@string/rover_name_text_example" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/rover_landing_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_text_def"
+                android:background="@color/text_bk_color"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rover_name"
+                tools:text="@string/rover_landing_date_text_example" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/rover_launch_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_text_def"
+                android:background="@color/text_bk_color"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rover_landing_date"
+                tools:text="@string/rover_launch_date_text_example" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_text_def"
+                android:background="@color/text_bk_color"
+                android:ellipsize="end"
+                android:gravity="bottom|center_horizontal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rover_launch_date"
+                tools:text="@string/status_text_example" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/camera_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text_def"
-        android:ellipsize="end"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card"
-        tools:text="@string/camera_name_text_example" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/camera_full_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text_def"
-        android:ellipsize="end"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/camera_name"
-        tools:text="@string/camera_full_name_text_example" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rover_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text_def"
-        android:ellipsize="end"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/camera_full_name"
-        tools:text="@string/rover_name_text_example" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rover_landing_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text_def"
-        android:ellipsize="end"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rover_name"
-        tools:text="@string/rover_landing_date_text_example" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rover_launch_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text_def"
-        android:ellipsize="end"
-        android:gravity="center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="?android:attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rover_landing_date"
-        tools:text="@string/rover_launch_date_text_example" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/status"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text_def"
-        android:ellipsize="end"
-        android:gravity="bottom|center_horizontal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="@color/orange_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rover_launch_date"
-        tools:text="@string/status_text_example" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

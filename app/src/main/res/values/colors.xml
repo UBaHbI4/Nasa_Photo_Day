@@ -17,6 +17,7 @@
     <color name="blue">#0091EA</color>
     <color name="light_blue">#00B8D4</color>
     <color name="transparent_gray">#A3000000</color>
+    <color name="text_bk_color">#99827B7B</color>
     <color name="light">#F0F0F0</color>
     <color name="transparent">#01000000</color>
 </resources>
