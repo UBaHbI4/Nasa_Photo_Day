@@ -22,7 +22,6 @@
         <item name="toolbar_title_color">@color/white</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="image_button_style">@style/ImageButtonStyle</item>
-
     </style>
 
     <style name="Theme.NasaPhotoDay.NoActionBar">
@@ -30,7 +29,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.NasaPhotoDay.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.NasaPhotoDay.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColor">@color/dark_gray</item>
+        <!--        <item name="android:backgroundTint">@color/blue</item>-->
+    </style>
 
     <style name="Theme.NasaPhotoDay.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
@@ -103,12 +105,14 @@
     </style>
 
     <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="fontFamily">@font/caveat_regular</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">normal</item>
     </style>
 
     <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="fontFamily">@font/caveat_regular</item>
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">normal</item>
@@ -117,6 +121,12 @@
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@color/white</item>
+    </style>
+
+    <!--Стиль шрифта главного меню навигации-->
+    <style name="NavigationTextStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/caveat_regular</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <dimen name="image_button_size">120dp</dimen>

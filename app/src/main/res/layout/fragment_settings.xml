@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.settings.SettingsFragment"
-    android:animateLayoutChanges="true">
+    android:animateLayoutChanges="true"
+    tools:context=".ui.settings.SettingsFragment">
 
     <TextView
         android:id="@+id/theme_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_def"
+        android:fontFamily="@font/caveat_bold"
         android:text="@string/settings_theme_title"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="?android:attr/colorPrimary"
+        android:textSize="@dimen/setting_title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,13 +34,17 @@
             android:id="@+id/option_grey_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gray_theme" />
+            android:fontFamily="@font/caveat_regular"
+            android:text="@string/gray_theme"
+            android:textSize="@dimen/settings_text_size" />
 
         <RadioButton
             android:id="@+id/option_orange_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/orange_theme" />
+            android:fontFamily="@font/caveat_regular"
+            android:text="@string/orange_theme"
+            android:textSize="@dimen/settings_text_size" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

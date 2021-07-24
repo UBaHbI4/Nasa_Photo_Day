@@ -38,13 +38,13 @@
     <item name="app_bar_image_alpha" format="float" type="dimen">0.3</item>
     <item name="start_title_width_percent" format="float" type="dimen">0.4</item>
     <dimen name="note_margin_main_card">5dp</dimen>
-    <dimen name="notes_text_title_size_main_card">16sp</dimen>
+    <dimen name="notes_text_title_size_main_card">18sp</dimen>
     <dimen name="notes_rect_size_main_card">20dp</dimen>
     <item name="notes_count_lines" format="integer" type="dimen">2</item>
-    <dimen name="notes_text_default_size_main_card">14sp</dimen>
+    <dimen name="notes_text_default_size_main_card">16sp</dimen>
     <dimen name="notes_date_margin_left">5dp</dimen>
     <dimen name="notes_date_margin_bottom">5dp</dimen>
-    <dimen name="notes_text_date_size_main_card">12sp</dimen>
+    <dimen name="notes_text_date_size_main_card">14sp</dimen>
     <dimen name="note_card_height">120dp</dimen>
     <dimen name="default_margin">16dp</dimen>
     <dimen name="note_button_size">50dp</dimen>
@@ -56,6 +56,14 @@
     <dimen name="item_earth_card_height">280dp</dimen>
     <dimen name="item_mars_parent_height">315dp</dimen>
     <dimen name="card_height_mars">280dp</dimen>
-    <dimen name="text_size_small">13sp</dimen>
+    <dimen name="text_size_small">15sp</dimen>
     <dimen name="copyright_margin_top">20dp</dimen>
+    <dimen name="nav_header_title_size">22sp</dimen>
+    <dimen name="nav_header_text_size">20sp</dimen>
+    <dimen name="start_menu_title_text_size">24sp</dimen>
+    <dimen name="earth_title_text_size">18sp</dimen>
+    <dimen name="apod_title_text_size">18sp</dimen>
+    <dimen name="setting_title_text_size">28sp</dimen>
+    <dimen name="settings_text_size">22sp</dimen>
+    <dimen name="apod_text_size">20sp</dimen>
 </resources>
