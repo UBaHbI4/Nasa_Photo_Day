@@ -46,4 +46,7 @@
     <string name="notes_title">Заметки</string>
     <string name="note_text_example">Текст заметки</string>
     <string name="fab_description" />
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
