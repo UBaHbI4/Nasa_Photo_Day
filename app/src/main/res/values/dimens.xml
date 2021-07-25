@@ -41,6 +41,7 @@
     <dimen name="notes_text_title_size_main_card">18sp</dimen>
     <dimen name="notes_rect_size_main_card">20dp</dimen>
     <item name="notes_count_lines" format="integer" type="dimen">2</item>
+    <item name="splash_scale_start" format="float" type="dimen">0.1</item>
     <dimen name="notes_text_default_size_main_card">16sp</dimen>
     <dimen name="notes_date_margin_left">5dp</dimen>
     <dimen name="notes_date_margin_bottom">5dp</dimen>
@@ -66,4 +67,9 @@
     <dimen name="setting_title_text_size">28sp</dimen>
     <dimen name="settings_text_size">22sp</dimen>
     <dimen name="apod_text_size">20sp</dimen>
+    <dimen name="splash_text_size">60sp</dimen>
+    <dimen name="splash_text_margin_bottom">90dp</dimen>
+    <dimen name="splash_start_alpha">0</dimen>
+    <dimen name="splash_image_size">150dp</dimen>
+    <dimen name="splash_image_margin">35dp</dimen>
 </resources>
